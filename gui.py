@@ -4,9 +4,12 @@ from selenium.webdriver.common.keys import Keys
 import selenium
 import time
 import subprocess
+import tkinter as tk
+import threading
 
 subprocess.Popen(['python', 'Cyberbard.py'])
-class LoginWindow(QtWidgets.QWidget):
+class LoginWindow(QtWidgets.QDialog):
+    self.login_window = LoginWindow()
     def __init__(self):
         super().__init__()
 
@@ -27,7 +30,7 @@ class LoginWindow(QtWidgets.QWidget):
         layout.addWidget(self.password_label)
         layout.addWidget(self.password_input)
         layout.addWidget(self.login_button)
-        self.setLayout(layout)
+        self.setLayout(layout) 
 
         # Eventi
         self.login_button.clicked.connect(self.login)
